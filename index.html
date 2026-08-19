@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#070812" />
+    <meta name="description" content="Pick a contender, time your boost, and survive the Gravity Lab." />
+    <title>Gravity Lab — Pick. Boost. Survive.</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="intro" aria-labelledby="game-title">
+        <div class="eyebrow"><span></span> Interactive experiment</div>
+        <h1 id="game-title">Gravity <em>Lab</em></h1>
+        <p>Pick a contender. Use one boost at the perfect moment. Survive the course.</p>
+        <div class="rules"><span>3 contenders</span><i></i><span>1 boost</span><i></i><span>1 winner</span></div>
+      </section>
+
+      <section class="game-shell" aria-label="Gravity Lab game">
+        <header class="screen-top">
+          <span class="live-dot"></span> LIVE SIMULATION
+          <div class="streak" aria-label="Current win streak">STREAK <strong id="streak-value">0</strong></div>
+          <button id="sound-button" class="sound-button" type="button" aria-label="Turn sound off">SOUND: ON</button>
+        </header>
+
+        <canvas id="game-canvas" width="540" height="900" aria-label="Three glowing balls race through a physics obstacle course"></canvas>
+
+        <div class="controls">
+          <div id="setup-panel">
+            <p class="control-label">Choose your contender</p>
+            <div class="ball-choices" role="group" aria-label="Choose a contender">
+              <button class="choice" data-ball="red" type="button"><span></span>RED</button>
+              <button class="choice selected" data-ball="cyan" type="button" aria-pressed="true"><span></span>CYAN</button>
+              <button class="choice" data-ball="yellow" type="button"><span></span>YELLOW</button>
+            </div>
+            <div class="power-preview"><span class="power-icon">⚡</span><div><small>YOUR POWER-UP</small><strong>BOOST</strong></div><p>One use</p></div>
+            <button id="start-button" class="primary-button" type="button"><span>▶</span> START THE RACE</button>
+          </div>
+
+          <div id="race-panel" class="hidden">
+            <div class="race-message"><span></span><span></span><span></span> RACE IN PROGRESS</div>
+            <button id="boost-button" class="boost-button" type="button"><span>⚡</span><div><strong>ACTIVATE BOOST</strong><small>ONE CHARGE — TIME IT WELL</small></div></button>
+          </div>
+
+          <div id="result-panel" class="hidden">
+            <p id="result-copy" class="result-copy"></p>
+            <button id="again-button" class="primary-button" type="button"><span>↻</span> TRY ANOTHER ROUND</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="info-card">
+        <span class="number">01</span>
+        <div><strong>How to play</strong><p>Choose a ball, start the race, then use your single boost when your contender needs it most.</p></div>
+      </aside>
+
+      <footer>WHAT TRAP SHOULD WE BUILD NEXT? <span>↓</span></footer>
+    </main>
+    <script src="./game.js"></script>
+  </body>
+</html>
